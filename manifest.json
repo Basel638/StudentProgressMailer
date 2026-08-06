@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Route Student Progress Report",
+  "description": "Generate, preview, and send professional student progress reports directly from Google Sheets using Gmail.",
+  "version": "1.0.6",
+  "icons": {
+    "16": "assets/icons/route-logo.png",
+    "32": "assets/icons/route-logo.png",
+    "48": "assets/icons/route-logo.png",
+    "128": "assets/icons/route-logo.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/route-logo.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "identity"
+  ],
+  "host_permissions": [
+    "https://docs.google.com/*",
+    "https://sheets.googleapis.com/*",
+    "https://gmail.googleapis.com/*"
+  ],
+  "oauth2": {
+    "client_id": "853824720939-uf2dneomk7s49aecikc661ctkb12d1uk.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/spreadsheets.readonly",
+      "https://www.googleapis.com/auth/gmail.send"
+    ]
+  },
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://docs.google.com/spreadsheets/*"
+      ],
+      "js": [
+        "content/content.js"
+      ]
+    }
+  ]
+}

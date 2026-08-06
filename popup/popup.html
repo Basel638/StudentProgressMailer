@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Student Progress Report</title>
+
+   <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h2>🎓 Route Student Progress Report</h2>
+            <span class="status">
+                Connected to Google Sheets
+            </span>
+        </header>
+<div id="sheetInfo">
+
+</div>
+        <div class="from-email-box">
+            <label for="fromEmailInput">Send From (optional alias)</label>
+            <input
+                type="email"
+                placeholder="e.g. you@yourdomain.com"
+                id="fromEmailInput">
+            <small>Leave blank to send from your signed-in Google account. Must be a verified "Send As" alias in Gmail.</small>
+        </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                placeholder="Search Student..."
+                id="searchInput">
+        </div>
+
+        <div class="students">
+
+            <h3>Students</h3>
+
+            <label class="select-all-row" for="selectAllCheckbox">
+                <input type="checkbox" id="selectAllCheckbox">
+                Select All
+            </label>
+
+            <div id="studentsList">
+
+                <!-- هنضيف الطلبة هنا بعدين -->
+
+            </div>
+
+        </div>
+
+        <footer>
+
+            <p>
+                Selected :
+                <span id="selectedCount">0</span>
+            </p>
+
+            <div class="buttons">
+
+                <button id="previewBtn">
+                    Preview
+                </button>
+
+                <button id="sendBtn">
+                    Send
+                </button>
+
+            </div>
+            <div class="created-by">
+
+    <div class="creator-name">
+        Created by <b>Basel Sameh</b>
+    </div>
+
+    <div class="contact-title">
+        Contact Information
+    </div>
+
+    <div class="contact-item">
+        📧 basel.sameh.route@gmail.com
+    </div>
+
+    <!-- <div class="contact-item"> -->
+        <!-- 💬 WhatsApp: +20 115 002 0653 -->
+        <!-- 📞 +20 115 002 0653 -->
+    <!-- </div> -->
+
+    <a
+    href="https://www.linkedin.com/in/basel-sameh"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="linkedin-link">
+    LinkedIn
+</a>
+
+</div>
+
+        </footer>
+
+    </div>
+
+    <script src="../services/sheetsAuth.js"></script>
+    <script src="../services/sheetsApi.js"></script>
+    <script src="../services/gmailApi.js"></script>
+    <script src="../utils/columnMap.js"></script>
+    <script src="../utils/sheetParser.js"></script>
+    <script src="../assets/logoBase64.js"></script>
+    <script src="../assets/iconsBase64.js"></script>
+    <script src="../assets/emailAssets.js"></script>
+    <script src="../templates/emailTemplate.js"></script>
+    <script src="popup.js"></script>
+
+</body>
+
+</html>
